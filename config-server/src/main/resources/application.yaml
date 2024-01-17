@@ -1,0 +1,12 @@
+server:
+  port: 8084
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          default-label: main
+          uri: https://github.com/hgallardoaraya/pep2-mingeso
+          search-paths: config-data
+  application:
+    name: config-server

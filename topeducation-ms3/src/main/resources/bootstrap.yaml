@@ -1,0 +1,26 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-server-service:8761/eureka/
+spring:
+  devtools:
+    restart:
+      aditional-paths: src/main/java
+  application:
+    name: topeducation-ms3
+  jpa:
+    database: MYSQL
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  cloud:
+    config:
+      enabled: true
+      uri: http://config-server-service:8084
+  datasource:
+    url: jdbc:mysql://mysql3-service:3306/${MYSQL_DB_3}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
